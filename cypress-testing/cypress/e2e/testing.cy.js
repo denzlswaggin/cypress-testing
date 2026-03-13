@@ -8,36 +8,42 @@ describe('url test', () => {
   })
 })
 
+describe('navigation test', () => {
 
-it('Navigation testing', () => {
-  cy.visit('https://github.com/cypress-io/cypress');
-  
-  cy.get('#issues-tab').click();
-  
-  cy.url().should('include', '/issues');
+  it('Navigation testing', () => {
+    cy.visit('https://github.com/cypress-io/cypress');
+    
+    cy.get('#issues-tab').click();
+    
+    cy.url().should('include', '/issues');
 
-  cy.get('#pull-requests-tab').click();
+    cy.get('#pull-requests-tab').click();
 
-  cy.url().should('include','/pulls')
+    cy.url().should('include','/pulls')
 
-  cy.get('#discussions-tab').click();
+    cy.get('#discussions-tab').click();
 
-  cy.url().should('include','/discussions');
+    cy.url().should('include','/discussions');
 
-  cy.get('#actions-tab').click();
+    cy.get('#actions-tab').click();
 
-  cy.url().should('include',"/actions");
-});
+    cy.url().should('include',"/actions");
+  })
+})
 
-it('Registration validation', () =>  {
-  cy.visit('https://github.com/');
+describe('registration test', () => {
 
-  /* cy.get('#user-email').first()
-  .type('test-user@seznam.cz')
-  .should('have.value', 'test-user@seznam.cz');
+  it('Registration validation', () => {
+    
+    cy.visit('https://github.com/');
 
-  */
+    /* cy.get('#user-email').first()
+    .type('test-user@seznam.cz')
+    .should('have.value', 'test-user@seznam.cz');
 
+    */
 
-  cy.get('.js-hero-action').click();
-});
+    cy.get('.js-hero-action').first().click({ force: true});
+
+  })
+})
