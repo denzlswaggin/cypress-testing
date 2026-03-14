@@ -1,4 +1,4 @@
-Je třeba si vytvořit envoromentální soubor cypress.env.json s těmito hodnotami: 
+Je třeba si vytvořit envoromentální soubor cypress.env.json s těmito hodnotami v rootu projektu(ve stejném místě kde je cypress.config.js atd..): 
 
 {
     "TEST_EMAIL": "",
